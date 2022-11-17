@@ -1,4 +1,19 @@
 .places__like {
-    color: black;
-    z-index: 1;
+    background-image: url(../../../images/like.svg);
+    background-repeat: no-repeat;
+    background-color: #fff;
+    width: 22px;
+    height: 19px;
+    border: none;
+    padding: 0 15px;
+    margin: 0;
+    align-self: center;
+    justify-content: end;
+    object-fit: contain;
+    transition: opacity 0.5s linear;
+     cursor: pointer;
+}
+
+.places__like {
+    opacity: 0.5;
 }

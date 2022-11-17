@@ -1,7 +1,36 @@
 .places {
     font-family: 'Inter', Arial, sans-serif;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     gap: 20px 17px;
-    max-width: 880px;
-    margin: 0;
+    width: 880px;
+    margin: 0 auto 0;
+    justify-items: center;
+    
 }
+/*
+.elements {
+   
+
+  
+    grid-template-columns: repeat(3, minmax(282px, 1fr));
+    grid-column-gap: 17px;
+    grid-row-gap: 20px;
+   
+  }
+  
+  @media screen and (max-width: 984px) {
+    .elements {
+      max-width: 552px;
+      grid-template-columns: repeat(2, minmax(266px, 1fr));
+    }
+  }
+  
+  @media screen and (max-width: 568px) {
+    .elements {
+      max-width: 282px;
+      grid-template-columns: 1fr;
+      margin: 36px auto 0;
+    }
+  }

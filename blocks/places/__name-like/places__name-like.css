@@ -1,0 +1,11 @@
+.places__name-like {
+    display: flex;
+    flex-direction: row;
+    max-width: 282px;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 10px;
+
+}

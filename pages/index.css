@@ -29,4 +29,5 @@
 @import url(../blocks/places/__img/places__img.css);
 @import url(../blocks/places/__item/places__item.css);
 @import url(../blocks/places/__like/places__like.css);
-@import url(../blocks/places/__list/places__list.css);
+@import url(../blocks/places/__like/_active/places__like_active.css);
+@import url(../blocks/places/__name-like/places__name-like.css);

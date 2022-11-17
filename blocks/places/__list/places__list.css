@@ -1,9 +1,0 @@
-.places__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px 17px;
-    box-sizing: border-box;
-    list-style: none;
-    margin: 0 auto;
-    
-}
