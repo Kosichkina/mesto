@@ -20,10 +20,6 @@
 @import url(../blocks/profile/__info/profile__info.css);
 
 
-
-@import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/__copyright/footer__copyright.css);
-
 @import url(../blocks/places/places.css);
 @import url(../blocks/places/__capture/places__capture.css);
 @import url(../blocks/places/__img/places__img.css);
@@ -31,3 +27,7 @@
 @import url(../blocks/places/__like/places__like.css);
 @import url(../blocks/places/__like/_active/places__like_active.css);
 @import url(../blocks/places/__name-like/places__name-like.css);
+
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);

@@ -5,13 +5,13 @@
     width: 22px;
     height: 19px;
     border: none;
-    padding: 0 15px;
+    padding: 0 20px;
     margin: 0;
     align-self: center;
-    justify-content: end;
     object-fit: contain;
     transition: opacity 0.5s linear;
     cursor: pointer;
+   
 }
 
 .places__like {

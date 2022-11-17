@@ -1,13 +1,14 @@
 .profile__edit-button {
     margin: 0;
     padding: 0;
-
+    height: 22px;
     width: 24px;
     border: 1px solid #fff;
     background: url(../../../images/change_pic.svg);
     background-position: center;
     background-repeat: no-repeat;
-    object-fit: contain;
+    align-self: center;
+    object-fit: cover;
     aspect-ratio: 1/1;
 
 
