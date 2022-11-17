@@ -11,7 +11,7 @@
     justify-content: end;
     object-fit: contain;
     transition: opacity 0.5s linear;
-     cursor: pointer;
+    cursor: pointer;
 }
 
 .places__like {

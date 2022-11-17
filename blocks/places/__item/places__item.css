@@ -1,8 +1,10 @@
 .places__item {
-    display: flex;
-    flex-direction: column;
     max-width: 282px;
     overflow: hidden;
+    border-radius: 10px;
     
     
 }
+/* disolay: flex;
+flex-direction: column;
+/*
