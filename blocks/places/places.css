@@ -10,7 +10,7 @@
     
 }
 /*
-.elements {
+.places{
    
 
   
@@ -20,14 +20,14 @@
   }
   
   @media screen and (max-width: 984px) {
-    .elements {
+    .places {
       max-width: 552px;
       grid-template-columns: repeat(2, minmax(266px, 1fr));
     }
   }
   
   @media screen and (max-width: 568px) {
-    .elements {
+   .places {
       max-width: 282px;
       grid-template-columns: 1fr;
       margin: 36px auto 0;
