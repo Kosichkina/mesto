@@ -2,19 +2,16 @@
     position: absolute;
     width: 32px;
     height: 32px;
-    top: -40px;
-    right: -40px;
+    top: -35px;
+    right: -35px;
     border: 0;
-
-    background-color: rgba(0, 0, 0, 0);
+    background-color:  #000000;
     background-image: url(../../../images/popup-close.svg);
     background-repeat: no-repeat;
-    object-fit: contain;
-
     background-position: center;
-    cursor: pointer;
     transition: opacity 0.5s linear;
     border: none;
+    cursor: pointer;
 }
 
 .popup__close:hover {
@@ -25,8 +22,7 @@
     .popup__close {
         width: 20px;
         height: 20px;
-        background-size: contain;
         right: 0;
-        top: -36px;
+        
     }
 }

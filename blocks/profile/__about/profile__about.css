@@ -1,16 +1,16 @@
 .profile__about {
     display: flex;
     max-height: 170px;
-   width: 470px;
+    width: 470px;
     flex-wrap: wrap;
 
-
 }
+
 @media screen and (max-width: 600px) {
     .profile__about {
-    max-width: 282px;
-    align-items: center;
-    justify-content: center;
+        max-width: 282px;
+        align-items: center;
+        justify-content: center;
 
     }
 }
