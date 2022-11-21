@@ -10,7 +10,6 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: opacity 0.5s linear;
-    border: none;
     cursor: pointer;
 }
 
