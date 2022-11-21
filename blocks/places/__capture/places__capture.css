@@ -12,8 +12,8 @@
     padding: 0 21px 0;
     margin: 0;
     overflow: hidden;
-    text-overflow: ellipsis;  /*троеточие*/
-    white-space: nowrap; /*отмена переноса текста*/
+    text-overflow: ellipsis;  /*троеточие, взято из задания к ПР*/
+    white-space: nowrap; /*отмена переноса текста, взято из задания к ПР*/
     
 
 }
