@@ -1,0 +1,8 @@
+.popup__input_type_name {
+    border: 0;
+    border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}

@@ -1,7 +1,14 @@
-.footer{
-max-width: 100%;
-display: flex;
-justify-content: flex-start;
-padding: 0 200px 0;
-    
+.footer {
+    max-width: 880px;
+    padding: 0 200px 0;
+    flex-shrink: 0;
+
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+    padding: 0 19px;
+    max-width: 282px;
+    justify-content: center;
+    }
 }
