@@ -1,6 +1,6 @@
-# mesto
-Учебный проект: **Место** 
-живет тут: https://kosichkina.github.io/mesto/
+# mesto 
+Учебный проект: **Место**   
+живет тут: https://kosichkina.github.io/mesto/ 
 *Задействовано в работе:* 
 + Языки: HTM, CSS, JS
 
