@@ -12,23 +12,20 @@
     </header>
     <main class="page__content">
       <section class="profile">
-        <div class="profile__container">
          <img class="profile__image" src="./images/Kusto_UP.jpeg" alt="фото профиля пользователя">
-        </div>
          <div class="profile__about">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button"></button>
+          <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
           <p class="profile__info">Исследователь океана</p>
          </div>
-        
-         <button class="profile__add-button" type="button"></button>
+         <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
       <section class="places">
         <div class="places__item">
           <img class="places__img" src="./images/karachaevsk.jpg" alt="Карачаевск, изображение монастыря">
           <div class="places__name-like">
              <h2 class="places__capture">Карачаевск</h2>
-             <button class="places__like" type="button"></button>
+             <button class="places__like" type="button" aria-label="Лайкнуть"></button>
           </div>
         </div>
         <div class="places__item">
@@ -69,11 +66,11 @@
         </section>
     </main>
      <footer class="footer">
-        <div class="footer__copyright">&copy; 2020 Mesto Russia</div>
+        <h2 class="footer__copyright">&copy; 2020 Mesto Russia</h2>
      </footer>
      <section class="popup">
       <div class="popup__container">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="popup__form">
           <input type="text" class="popup__input popup__input_type_name" name="popup__input_type_name">

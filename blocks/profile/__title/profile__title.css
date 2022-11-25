@@ -7,7 +7,14 @@ margin: 0 20px 0 0;
 padding: 0;
 justify-content: flex-start;
 }
-
+@media screen and (max-width: 800px) {
+    .profile__title {
+        font-size: 32px;
+        line-height: 38px;
+        margin-left: 10px;
+ 
+    }
+}
 @media screen and (max-width: 600px) {
     .profile__title {
         font-size: 27px;
