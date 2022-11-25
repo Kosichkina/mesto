@@ -12,10 +12,14 @@
 
 .profile__add-button:hover {
     opacity: .6;
+    cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
     .profile__add-button {
         width: 100px;
+        background: url('../../../images/ADD-button_mobile.png');
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 

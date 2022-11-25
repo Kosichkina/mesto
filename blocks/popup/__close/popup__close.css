@@ -5,16 +5,18 @@
     top: -35px;
     right: -35px;
     border: 0;
-    background-color:  #000000;
+    background-color:  rgba(0, 0, 0, 0.1);
     background-image: url(../../../images/popup-close.svg);
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
     transition: opacity 0.5s linear;
-    cursor: pointer;
+    
 }
 
 .popup__close:hover {
-    opacity: 0.6;
+    opacity: .6;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 568px) {
@@ -22,6 +24,5 @@
         width: 20px;
         height: 20px;
         right: 0;
-        
     }
 }

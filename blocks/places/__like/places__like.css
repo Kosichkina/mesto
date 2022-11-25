@@ -6,8 +6,8 @@
     height: 19px;
     border: none;
     padding: 0 20px;
-    margin: 0;
-    align-self: center;
+    margin: 16px 0 0 0;
+    
     object-fit: contain;
     transition: opacity 0.5s linear;
     cursor: pointer;
