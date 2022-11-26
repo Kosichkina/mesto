@@ -17,6 +17,7 @@ max-width: 294px;
         font-size: 32px;
         line-height: 38px;
         margin-left: 10px;
+        max-width: 189px;
  
     }
 }
@@ -24,6 +25,9 @@ max-width: 294px;
     .profile__title {
         font-size: 27px;
         line-height: 33px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        
  
     }
 }

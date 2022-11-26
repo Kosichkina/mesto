@@ -5,7 +5,7 @@
     top: -35px;
     right: -35px;
     border: 0;
-    background-color:  rgba(0, 0, 0, 0.1);
+    background-color:  rgba(0, 0, 0, 0);
     background-image: url(../../../images/popup-close.svg);
     background-repeat: no-repeat;
     background-size: contain;

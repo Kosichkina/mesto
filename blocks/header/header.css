@@ -1,9 +1,8 @@
 .header {
    max-width: 100%;
     display: flex;
-    padding-bottom: 41px;
     margin: 0 200px 0;
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgb(84, 84,87, .7);
 
 }
 @media screen and (max-width: 1000px) {
@@ -26,9 +25,10 @@
 @media screen and (max-width: 500px) {
     .header {
        
-       margin-right: 27px;
-        padding-bottom: 31px;
-        margin-left: 52px;
+       padding-right: 27px;
+        padding-left: 52px;
+        margin-left: 0;
+        margin-right: 0;
     
 
 
