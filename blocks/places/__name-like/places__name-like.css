@@ -11,3 +11,18 @@
 
 
 }
+@media screen and (max-width: 1150px) {
+    .places__name-like {
+      width: 266px;
+ 
+    }
+  }
+  
+  @media screen and (max-width: 560px) {
+    .places__name-like {
+      width: 282px;
+     
+    }
+  }
+
+  

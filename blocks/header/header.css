@@ -3,6 +3,7 @@
     display: flex;
     margin: 0 200px 0;
     border-bottom: 1px solid rgb(84, 84,87, .7);
+    padding-bottom: 41px;
 
 }
 @media screen and (max-width: 1000px) {
@@ -26,9 +27,11 @@
     .header {
        
        padding-right: 27px;
-        padding-left: 52px;
+        padding-left: 27px;
         margin-left: 0;
         margin-right: 0;
+        padding-bottom: 31px;
+
     
 
 
