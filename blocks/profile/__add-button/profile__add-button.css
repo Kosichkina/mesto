@@ -14,7 +14,7 @@
     opacity: .6;
     cursor: pointer;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
     .profile__add-button {
         width: 100px;
         background: url('../../../images/ADD-button_mobile.png');

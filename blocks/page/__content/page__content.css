@@ -1,24 +1,22 @@
 
 .page__content {
     padding: 0 200px;
-    margin: 36px 0 67px;
+    margin: 36px auto 67px;
 
  
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
     .page__content {
-        padding-left: 100px;
-        padding-right: 100px;
-        
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
 }
 
 @media screen and (max-width: 800px) {
     .page__content {
-        padding-left: 24px;
-        padding-right: 24px;
+       
          margin-bottom: 45px;
     }
 
