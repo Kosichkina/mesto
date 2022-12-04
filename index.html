@@ -68,18 +68,51 @@
      <footer class="footer">
         <h2 class="footer__copyright">&copy; 2020 Mesto Russia</h2>
      </footer>
-     <section class="popup">
+     <section class="popup popup-edit-profile">
       <div class="popup__container">
         <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form" name="popup__form">
-          <input type="text" class="popup__input popup__input_type_name" name="popup__input_type_name">
-          <input type="text" class="popup__input popup__input_type_description" name="popup__input_type_description">
+        <form class="popup__form popup__form_edit-profile" name="popup__profile">
+          <input type="text" class="popup__input popup__input_type_name" name="popup__input_type_name" placeholder="Ваше имя" required>
+          <input type="text" class="popup__input popup__input_type_description" name="popup__input_type_description" placeholder="О себе" required>
           <button class="popup__button" type="submit">Сохранить</button>
         </form>
       </div>
     </section> 
+    <section class="popup popup-new-place">
+      <div class="popup__container">
+        <button class="popup__close" type="button" aria-label="Закрыть"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form popup__form-new-place" name="popup__new-place">
+          <input type="text" class="popup__input popup__input_type_place" name="popup__input_type_place" placeholder="Название места" required>
+          <input type="url" class="popup__input popup__input_type_link" name="popup__input_type_link" placeholder="Ссылка на изображение" required>
+          <button class="popup__button" type="submit">Создать</button>
+        </form>
+      </div>
+    </section>
+    <section class="popup popup-zoom">
+      <div class="popup__image-container">
+        <button class="popup__close" type="button" aria-label="Закрыть"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <div class="popup-zoom-img" name="popup-zoom-img">
+          <img src="./images/karachaevsk.jpg" alt="#" class="popup__big-img">
+          <p class="popup__zoom_name">Карачаевск</p>
+        </form>
+      </div>
+    </section>
+    <template id="places-template">
+      <div class="places__item">
+        <img class="places__img" src="#" alt="#">
+        <button class="places__delete-button" type="button"></button>
+        <div class="places__name-like">
+           <h2 class="places__capture"></h2>
+           <button class="places__like" type="button" aria-label="Лайкнуть"></button>
+        </div>
+      </div>
+    </template>
+
     <script src="./scripts/index.js"></script>
+    <script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>
 
   </body>
   </html>
