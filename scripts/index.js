@@ -30,9 +30,11 @@ const editPlaceTitleElement = document.querySelector('.popup-new-place__title');
 /*Открытие попапа (ПР-4) */
 const openPopup = function () {
     popupElement.classList.add('popup_active');
+    /*popupElement.classList.toggle('popup_opened');*/
     popupInputName.value = profileTitleElement.textContent;
     popupInputDescription.value = profileSubtitleElement.textContent;
-    
+    popupInputPlace.value = editPlaceTitleElement.textContent;
+    popupInputLink.value = Ссылка.textContent;
 
 
 };
@@ -54,10 +56,10 @@ function formSubmitHandler (evt) {
 };
 
 formElement.addEventListener('submit', formSubmitHandler);
-/*
+/*ПР-5 
 smoothly ('popup', 'popup_active', profileTitleElement.textContent, profileSubtitleElement.textContent,);
 
-ПР-5 */
+*/
 const initialCards = [
     {
       name: 'Архыз',
@@ -85,5 +87,20 @@ const initialCards = [
     }
   ];
 
+const initialCardsEl = document.querySelector('.places');
+const TemplateElement = document.querySelector('.places-template').content.querySelector('.places__item');
+const createElement = item => {
+const card = TemplateElement.cloneNode(true);
+const cardTitle = card.querySelector('.places__capture');
+const cardImg = card.querySelector('.places__img');
+
+const cardsLikeButton = card.querySelector('.places__like');
+const cardsDeleteButton = card.querySelector('.places__delete-button');
 
 
+cardTitle.textContent = item.name;
+cardImg.src = item.link;
+cardImg.alt = item.name;
+
+return card;
+}
