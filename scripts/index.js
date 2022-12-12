@@ -28,7 +28,9 @@ const initialCards = [
 
 
 //Создание карточки
+const cardsContainer = document.querySelector('.places__item');
 const Template = document.querySelector('.places-template').content.querySelector('.places__item');
+
 const generateCard = (card) => { 
     const Card = Template.cloneNode(true);   
     const CardTitle = Card.querySelector('.places__name-like');
@@ -36,11 +38,10 @@ const generateCard = (card) => {
     const cardLikeButton = Card.querySelector('.places__like');
     const cardDeleteButton = Card.querySelector('.places__delete-button');
    
-    
 
-  
-    CardTitle.textContent = card.name;
-    cardImage.src = card.link;
+
+    CardTitle.textContent = places.name;
+    cardImage.src = places.link;
     cardImage.alt = card.name;
   
     cardLikeButton.addEventListener('click', handleLikeCard);
