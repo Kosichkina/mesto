@@ -28,13 +28,16 @@ const initialCards = [
 
 
 //Создание карточки
+const Template = document.querySelector('.places-template').content.querySelector('.places__item');
 const generateCard = (card) => { 
     const Card = Template.cloneNode(true);   
-    const CardTitle = Card.querySelector('.card__title');
-    const cardImage = Card.querySelector('.card__image');
-    const cardLikeButton = Card.querySelector('.card__like-button');
-    const cardDeleteButton = Card.querySelector('.card__delete-button');
+    const CardTitle = Card.querySelector('.places__name-like');
+    const cardImage = Card.querySelector('.places__img');
+    const cardLikeButton = Card.querySelector('.places__like');
+    const cardDeleteButton = Card.querySelector('.places__delete-button');
+   
     
+
   
     CardTitle.textContent = card.name;
     cardImage.src = card.link;
