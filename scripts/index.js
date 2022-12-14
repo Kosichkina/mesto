@@ -27,37 +27,43 @@ const initialCards = [
   ];
 
 
+
 //Создание карточки
-const cardsContainer = document.querySelector('.places__item');
-const Template = document.querySelector('.places-template').content.querySelector('.places__item');
-
-const generateCard = (card) => { 
-    const Card = Template.cloneNode(true);   
-    const CardTitle = Card.querySelector('.places__name-like');
-    const cardImage = Card.querySelector('.places__img');
-    const cardLikeButton = Card.querySelector('.places__like');
-    const cardDeleteButton = Card.querySelector('.places__delete-button');
-   
+const cardsContainer = document.querySelector('cards');
+const CardTemplate = document.querySelector('#places-template').content.querySelector('.places__item');
 
 
-    CardTitle.textContent = places.name;
-    cardImage.src = places.link;
+const createCard  = (card) => { 
+    const newCard = CardTemplate.cloneNode(true);   
+    const сardTitle = newCard.querySelector('.places__name-like');
+    const cardImage = newCard.querySelector('.places__img');
+    const cardLikeButton = newCard.querySelector('.places__like');
+    const cardDeleteButton = newCard.querySelector('.places__delete-button');
+    
+    сardTitle.textContent = card.name;
+    cardImage.src =  card.link;
     cardImage.alt = card.name;
-  
+
     cardLikeButton.addEventListener('click', handleLikeCard);
     cardDeleteButton.addEventListener('click', handleDeleteCard);
     cardImage.addEventListener('click', handleImagePopup);
+    
+
+   
     return newCard;
-  };
-  
-  const renderCard = (card) => {
-    Template.prepend(generateCard(card));
+
+};
+
+
+const renderCard = (card) => {
+    cardsContainer.prepend(card);
+
   };
   
   initialCards.forEach((card) => {
     renderCard(card);
+    
+ 
   });
   
   
-  
- 
