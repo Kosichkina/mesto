@@ -29,13 +29,14 @@ const initialCards = [
 
 
 //Создание карточки
-const cardsContainer = document.querySelector('cards');
-const CardTemplate = document.querySelector('#places-template').content.querySelector('.places__item');
+
+const cardsContainer = document.querySelector('.places');
+const CardTemplate = document.querySelector('#places-template').content.querySelector('.places__item')
 
 
 const createCard  = (card) => { 
     const newCard = CardTemplate.cloneNode(true);   
-    const сardTitle = newCard.querySelector('.places__name-like');
+    const сardTitle = newCard.querySelector('.places__capture');
     const cardImage = newCard.querySelector('.places__img');
     const cardLikeButton = newCard.querySelector('.places__like');
     const cardDeleteButton = newCard.querySelector('.places__delete-button');
@@ -43,20 +44,20 @@ const createCard  = (card) => {
     сardTitle.textContent = card.name;
     cardImage.src =  card.link;
     cardImage.alt = card.name;
-
+    
+/*
     cardLikeButton.addEventListener('click', handleLikeCard);
     cardDeleteButton.addEventListener('click', handleDeleteCard);
     cardImage.addEventListener('click', handleImagePopup);
-    
 
-   
+   */
     return newCard;
 
 };
 
 
 const renderCard = (card) => {
-    cardsContainer.prepend(card);
+    cardsContainer.prepend(createCard(card));
 
   };
   
@@ -65,5 +66,4 @@ const renderCard = (card) => {
     
  
   });
-  
   
