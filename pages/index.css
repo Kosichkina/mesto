@@ -48,6 +48,9 @@
 @import url(../blocks/popup/__capture-zoom/popup__capture-zoom.css);
 @import url(../blocks/popup/__img-zoom);
 @import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/_type/popup_type_edit-profile.css);
+@import url(../blocks/popup/_type/popup_type_new-place.css);
+@import url(../blocks/popup/_type/popup_type_zoom.css);
 
 
 
