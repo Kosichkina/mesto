@@ -108,7 +108,7 @@ const CardTemplate = document.querySelector('#places-template').content.querySel
 
 // открытие попапа с большой картинкой - выбор переменных
 
-const popupZoom = document.querySelector('popup_type_zoom');
+const popupZoom = document.querySelector('.popup_type_zoom');
 const popupImageContainer = document.querySelector('.popup__image-container');
 const popupOpenBigImage = popupImageContainer.querySelector('.popup-zoomm');
 const PopupCloseZoom = popupImageContainer.querySelector('.popup__close'); 
@@ -148,10 +148,11 @@ const handleLikeButtonClick = function (evt) {
 
 const handlepopupOpenBigImageClick = (e) => {
     openPopup(popupZoom);
-    /*
+    
+    popupOpenZoom.src = e.target.src;
     popupOpenZoom.alt = e.target.closest('.places__item').querySelector('.places__capture').textContent;
     popupImageCapture.textContent = e.target.closest('.places__item').querySelector('.places__capture').textContent;
-*/
+
   };
   
   
