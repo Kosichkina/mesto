@@ -1,6 +1,9 @@
 .popup {
     font-family: 'Inter', Arial, sans-serif;
-    display: none;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.5s linear;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     align-items: center;
@@ -18,12 +21,13 @@
 div > ul {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear (тут надо 0.3s-0.7s, иначе не будет плавности, а если больше 1, то подвисает)
 }
 div:hover > ul {
   visibility: visible;
   opacity: 1;
 }
 
-т.е display: none заменить на visiability hidden, display flex, 
+т.е display: none заменить на visiability hidden, display flex и поправить в popup__opened visibility: visible; 
+    opacity: 1;
 */
