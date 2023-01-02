@@ -31,9 +31,11 @@
         <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form popup__form_edit-profile" name="popup__profile">
-          <input type="text" class="popup__input popup__input_type_name" name="popup__input_type_name" placeholder="Имя Фамилия" required>
-          <input type="text" class="popup__input popup__input_type_description" name="popup__input_type_description" placeholder="Профессия" required>
-          <button class="popup__button" type="submit">Сохранить</button>
+          <input type="text" class="popup__input popup__input_type_name" name="popup__input_type_name" placeholder="Имя Фамилия"  minlength="2" maxlength="40" required>
+          <span class="name-error popup__input-error"></span>
+          <input type="text" class="popup__input popup__input_type_description" name="popup__input_type_description" placeholder="Профессия"  minlength="2" maxlength="200" required>
+          <span class="description-error popup__input-error"></span>
+          <button class="popup__button popup__button_valid" type="submit">Сохранить</button>
         </form>
       </div>
     </section> 
@@ -41,9 +43,11 @@
       <div class="popup__container-new-place">
         <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <h3 class="popup__title">Новое место</h3>
-        <form class="popup__form popup__form-new-place" name="popup__new-place">
-          <input type="text" class="popup__input popup__input_type_place" name="popup__input_type_place" placeholder="Название места" required>
+        <form class="popup__form popup__form-new-place" name="popup__new-place" novalidate>
+          <input type="text" class="popup__input popup__input_type_place" name="popup__input_type_place" placeholder="Название места" minlength="2" maxlength="30" required>
+          <span class="place-error popup__input-error"></span>
           <input type="url" class="popup__input popup__input_type_link" name="popup__input_type_link" placeholder="Ссылка на изображение" required>
+          <span class="link-error popup__input-error"></span>
           <button class="popup__button" type="submit">Создать</button>
         </form>
       </div>
@@ -68,10 +72,10 @@
       </div>
     </template>
 
-
+    <script src="./scripts/validate.js"></script>
     <script defer src="./scripts/index.js"></script>
     <script src="./scripts/constants.js"></script>
-
+   
 <!-- 
     <script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>
    
