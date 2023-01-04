@@ -6,16 +6,23 @@ const  validationConfig = {
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     activeButtonClass: '.popup__button_valid', 
-    inactiveButtonClass: '.popup__button_invalid', //нет класса в htm,
+    inactiveButtonClass: '.popup__button_invalid', //может, если это добавить, то заработает
+    inactiveButtonClass: '.popup__button_invalid', //нет класса в htm, есть в css
     inputErrorClass: '.popup__input-error',
-    errorClass: 'popup__input-error_visible', //нет класса в htm
+    errorClass: 'popup__input-error_visible', //нет класса в htm, есть в css
   };
 
-
+  //Общие переменные для обоих попапов
   const form = document.querySelector('.popup__form');
+  const input = document.querySelector('.popup__input');
+  const forms = [...document.querySelectorAll('.popup__form')];
+  const inputs = [...document.querySelectorAll('.popup__input')];
+
+  // переменные для попапа профиля
   const userNameInput = document.querySelector('.popup__input_type_name');
   const descriptionInput = document.querySelector('.popup__input_type_description')
   
+
   function handleSubmit(evt) {
     evt.preventDefault();
     console.log({
@@ -66,8 +73,9 @@ function hasInvalidImput(inputList) {
 
 function toggleButtonState(inputList, buttonElement, config) {
 if (hasInvalidImput(inputList)) {
-    buttonElement.classList.remove(config.activeButtonClass);
-    buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.classList.add(config.inactiveButtonClass);  
+  buttonElement.classList.remove(config.activeButtonClass);
+    
     buttonElement.disable  = true;
 } else {
     buttonElement.classList.add(config.activeButtonClass);
