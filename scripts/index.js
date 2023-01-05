@@ -68,7 +68,7 @@ popupOpenButtonProfileElement.addEventListener('click', function(){
           name: popupInputNewPlace.value,
           link: popupInputLinkPlace.value,
       });
-      closePopup(popupAddButton);
+      closePopup(buttonClosePopupAdd);
   };
   
   popupFormAdd.addEventListener('submit', handleSubmitAddCard);
