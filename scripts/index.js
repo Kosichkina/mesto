@@ -44,23 +44,25 @@ const closePopupEsc = (event) => {
 
 //закрытие попапа OVERLAY
 
-const closePopupOverlay = (event) => {
+function closePopupOverlay(event){
   if(event.target === event.currentTarget) {
     closePopup(event.target);
   };
+  
 }
-
 
 //открытие попапа
 const openPopup = function(popup) {
  popup.classList.add('popup_active');
-  document.addEventListener('keydown', closePopupEsc);  
+  document.addEventListener('keydown', closePopupEsc);
+  popup.addEventListener("click", closePopupOverlay)
 };
 
 //закрытие попапа
 const closePopup = function (popup) {
   popup.classList.remove('popup_active');
   document.removeEventListener('keydown', closePopupEsc);  
+  popup.removeEventListener("click", closePopupOverlay)
 };
 
 
