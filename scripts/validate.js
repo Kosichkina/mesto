@@ -76,16 +76,32 @@ function hideInputError(formElement, inputElement, config) {
    function hasInvalidInput(inputList) {
     return inputList.some((inputElement) => !inputElement.validity.valid);
   }
-  
+  /* функции для скрытия кнопки  */
+  function disableSubmithButton(buttonElement, config) {
+    buttonElement.classList.add('popup__button_invalid');
+    buttonElement.disabled = 'disabled';
+  }
+
+  function enableSubmithButton(buttonElement, config) {
+    buttonElement.classList.remove('popup__button_invalid');
+    buttonElement.disabled = '';
+  }
+
+
   function toggleButtonState(inputList, buttonElement, config) {
     if (hasInvalidInput(inputList)) {
       buttonElement.classList.remove(config.activeButtonClass);
       buttonElement.classList.add(config.inactiveButtonClass);
       buttonElement.disabled = true;
+      disableSubmithButton(buttonElement, config);
+     
+      
     } else {
       buttonElement.classList.add(config.activeButtonClass);
       buttonElement.classList.remove(config.inactiveButtonClass);
       buttonElement.disabled = false;
+      enableSubmithButton(buttonElement, config)
+   
     }
   }
 
@@ -113,3 +129,12 @@ formList.forEach((formElement) => {
 })
  }
 
+/*
+ не вызывать toggleButtonState вне обработчика события input, а завести в validate.js
+  две функции, disableSubmitButton и enableSubmitButton, которые вызываются в toggleButtonState.
+   Но также можно вызвать disableSubmitButton при открытии попапа добавления новой карточки 
+   и тем самым заблокировать кнопку при пустых первоначальных полях. 
+   Эта функция disableSubmitButton принимает два параметра - элемент кнопки и конфиг 
+   с классами, из которого надо взять класс отвечающий за дизейбленное состояние кнопки
+    и добавить этот класс кнопке.
+ */

@@ -24,12 +24,43 @@ const popupFormAdd = popupNewPlaceElement.querySelector('.popup__form-new-place'
 
 // открытие и закрытие попапа - ФУНКЦИЯ универсальная
 
+/*
 const openPopup = function (popup) { 
     popup.classList.add('popup_active');
 }
 const closePopup = function(popup) {
     popup.classList.remove('popup_active')
 }
+*/
+
+//закрытие попапа  ESC
+
+const closePopupEsc = (event) => {
+  if (event.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_active');
+    closePopup(openedPopup);
+  };
+}
+
+//закрытие попапа OVERLAY
+const closePopupOverlay = (event) => {
+  if(event.target === event.currentTarget) {
+    closePopup(event.target);
+  }
+}
+
+//открытие попапа
+const openPopup = function(popup) {
+ popup.classList.add('popup_active');
+  document.addEventListener('keydown', closePopupEsc);  
+};
+
+//закрытие попапа
+const closePopup = function (popup) {
+  popup.classList.remove('popup_active');
+  document.removeEventListener('keydown', closePopupEsc);  
+};
+
 
 //Открытие и закрытие редактирования профиля
 popupOpenButtonProfileElement.addEventListener('click', function(){
@@ -40,6 +71,8 @@ popupOpenButtonProfileElement.addEventListener('click', function(){
   
   popupCloseButtonProfileElement.addEventListener('click', function() {
     closePopup(popupEditProfile);
+    closePopupOverlay();
+
   });
   
   const handleSubmitProfile = (event) => {
