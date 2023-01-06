@@ -43,11 +43,13 @@ const closePopupEsc = (event) => {
 }
 
 //закрытие попапа OVERLAY
+
 const closePopupOverlay = (event) => {
   if(event.target === event.currentTarget) {
     closePopup(event.target);
-  }
+  };
 }
+
 
 //открытие попапа
 const openPopup = function(popup) {
@@ -71,7 +73,7 @@ popupOpenButtonProfileElement.addEventListener('click', function(){
   
   popupCloseButtonProfileElement.addEventListener('click', function() {
     closePopup(popupEditProfile);
-    closePopupOverlay();
+
 
   });
   
