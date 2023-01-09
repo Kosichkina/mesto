@@ -11,6 +11,7 @@ const profileTitleElement = profileElement.querySelector('.profile__title');
 const profileSubtitleElement = profileElement.querySelector('.profile__info');
 const popupformEditProfile = popupEditProfile.querySelector('.popup__form_edit-profile');
 const popupForm = document.querySelector('.popup__form');
+const buttonCloseList = document.querySelectorAll('.popup__close'); 
   
 
 //открытие попапа добавления картинки - выбор переменных
@@ -23,15 +24,6 @@ const popupSubmitAddButton = popupNewPlaceElement.querySelector('.popup__button'
 const popupFormAdd = popupNewPlaceElement.querySelector('.popup__form-new-place');
 
 // открытие и закрытие попапа - ФУНКЦИЯ универсальная
-
-/*
-const openPopup = function (popup) { 
-    popup.classList.add('popup_active');
-}
-const closePopup = function(popup) {
-    popup.classList.remove('popup_active')
-}
-*/
 
 //закрытие попапа  ESC
 
@@ -55,65 +47,81 @@ function closePopupOverlay(event){
 const openPopup = function(popup) {
  popup.classList.add('popup_active');
   document.addEventListener('keydown', closePopupEsc);
-  popup.addEventListener("click", closePopupOverlay)
+  
+ 
 };
 
-//закрытие попапа
+//закрытие попапа 
 const closePopup = function (popup) {
   popup.classList.remove('popup_active');
   document.removeEventListener('keydown', closePopupEsc);  
-  popup.removeEventListener("click", closePopupOverlay)
+ 
 };
 
 
 //Открытие и закрытие редактирования профиля
+
 popupOpenButtonProfileElement.addEventListener('click', function(){
-    openPopup(popupEditProfile);
+  
+  openPopup(popupEditProfile);
     popupInputName.value = profileTitleElement.textContent;
     popupInputDescription.value = profileSubtitleElement.textContent;
+    
   });
-  
-  popupCloseButtonProfileElement.addEventListener('click', function() {
-    closePopup(popupEditProfile);
+  // переписала функцию закрытия по комментрарию ревьюера- получилась единая функция и слушатель для попапов
 
+  buttonCloseList.forEach(btn => {
+    const popup = btn.closest('.popup');
+    popup.addEventListener('mousedown', closePopupOverlay);
+    btn.addEventListener('click', () => closePopup(popup)); 
+  }) 
 
-  });
-  
-  const handleSubmitProfile = (event) => {
-    event.preventDefault();
-    profileTitleElement.textContent = popupInputName.value;
-    profileSubtitleElement.textContent = popupInputDescription.value;
-    closePopup(popupEditProfile);
-  };
-
-  popupformEditProfile.addEventListener('submit', handleSubmitProfile);
   
   
   //Открытие и закрытие добавления карточки
   buttonOpenPopupAdd.addEventListener('click', function() {
+   // disableSubmithButton(popupNewPlaceElement, 'popup__button_invalid');
     openPopup(popupNewPlaceElement);
-    popupFormAdd.reset();
+    
+    popupFormAdd.reset() 
+    
+    
   });
-  
-  buttonClosePopupAdd.addEventListener('click', function() {
-    closePopup(popupNewPlaceElement);
-  });
+
   
   const handleSubmitAddCard = (event) => {
-      event.preventDefault();
+    event.preventDefault();
+    event.submitter.disabled = true;
+    event.submitter.classList.add('popup__button_invalid');
       renderCard({
           name: popupInputNewPlace.value,
           link: popupInputLinkPlace.value,
+          
+          
       });
-      closePopup(buttonClosePopupAdd);
+      
+      closePopup(popupNewPlaceElement);
+    
+      
   };
   
-  popupFormAdd.addEventListener('submit', handleSubmitAddCard);
+
+
+    
+
+
+   /*
+  function disableButton (evt){
+      evt.submitter.disabled = true;
+      evt.submitter.classList.add('popup__button_invalid');
+    }
+      disableButton(evt, popupNewPlaceElement);
+*/
 
 //Создание карточки
 
 const cardsContainer = document.querySelector('.places');
-const CardTemplate = document.querySelector('#places-template').content.querySelector('.places__item')
+const сardTemplate = document.querySelector('#places-template').content.querySelector('.places__item')
 
 // открытие попапа с большой картинкой - выбор переменных
 
@@ -128,11 +136,11 @@ const popupImageCapture = popupImageContainer.querySelector('.popup__capture-zoo
 // закончились переменные с большой картинкой
 
 const createCard = (card) => {
-    const Card = CardTemplate.cloneNode(true);
-    const сardTitle = Card.querySelector('.places__capture');
-    const cardImage = Card.querySelector('.places__img');
-    const cardDeleteButton = Card.querySelector('.places__delete-button');
-    const cardLikeButton = Card.querySelector('.places__like');
+    const сard = сardTemplate.cloneNode(true);
+    const сardTitle = сard.querySelector('.places__capture');
+    const cardImage = сard.querySelector('.places__img');
+    const cardDeleteButton = сard.querySelector('.places__delete-button');
+    const cardLikeButton = сard.querySelector('.places__like');
 
     сardTitle.textContent = card.name;
     cardImage.src = card.link;
@@ -141,8 +149,10 @@ const createCard = (card) => {
     cardDeleteButton.addEventListener('click', handleDeleteButtonClick);
     cardLikeButton.addEventListener('click', handleLikeButtonClick);
     cardImage.addEventListener('click', handlepopupOpenBigImageClick);
+    // cardImage.addEventListener('click', () => handlepopupOpenBigImageClick(card)); не поняла, как сделать и зачем, в вебинаре так, вроде показывали, как я сделала
+    
 
-    return Card;
+    return сard;
 
 };
 const handleDeleteButtonClick = (e) => {
@@ -153,7 +163,7 @@ const handleDeleteButtonClick = (e) => {
 const handleLikeButtonClick = function (evt) {
     evt.target.classList.toggle('places__like_active')
 };
-/*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
+/*в toggle (переключатель классов) перередается класс, пишется без точки*/
 
 const handlepopupOpenBigImageClick = (e) => {
     openPopup(popupZoom);
