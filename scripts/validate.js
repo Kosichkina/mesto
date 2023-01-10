@@ -6,7 +6,6 @@ const  validationConfig = {
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_invalid',
-    inputErrorClass: 'popup__input-error',
     errorClass: 'popup__input-error_visible', //нет класса в htm, есть в css
   };
 
