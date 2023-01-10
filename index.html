@@ -26,33 +26,33 @@
      <footer class="footer">
         <h2 class="footer__copyright">&copy; 2020 Mesto Russia</h2>
      </footer>
-     <section class="popup popup_type_edit-profile popup-opened">
+     <section class="popup popup_type_edit-profile">
       <div class="popup__container">
         <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form popup__form_edit-profile" name="popup__profile" novalidate>
           <input id="name" type="text" class="popup__input popup__input_type_name" name="popup__input_type_name" placeholder="Имя Фамилия"  minlength="2" maxlength="40" required>
-          <span id="name-error" class="error name-error popup__input-error"></span>
+          <span class="name-error popup__input-error"></span>
           <input id="description" type="text" class="popup__input popup__input_type_description" name="popup__input_type_description" placeholder="Профессия"  minlength="2" maxlength="200" required>
-          <span class="error description-error popup__input-error" id="description-error"></span>
+          <span class="description-error popup__input-error"></span>
           <button class="popup__button" type="submit">Сохранить</button>
         </form>
       </div>
     </section> 
-    <section class="popup popup_type_new-place popup-opened">
+    <section class="popup popup_type_new-place">
       <div class="popup__container-new-place">
         <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form popup__form-new-place" name="popup__new-place" novalidate>
           <input id="new-place" type="text" class="popup__input popup__input_type_place" name="popup__input_type_place" placeholder="Название места" minlength="2" maxlength="30" required>
-          <span id="new-place-error" class="error new-place-error popup__input-error"></span>
+          <span class="new-place-error popup__input-error"></span>
           <input id="link" type="url" class="popup__input popup__input_type_link" name="popup__input_type_link" placeholder="Ссылка на изображение" required>
-          <span id="link-error" class="error link-error popup__input-error"></span>
+          <span class="link-error popup__input-error"></span>
           <button class="popup__button" type="submit">Создать</button>
         </form>
       </div>
     </section>
-    <section class="popup popup_type_zoom popup-opened">
+    <section class="popup popup_type_zoom">
       <div class="popup__image-container">
         <button class="popup__close" type="button" aria-label="Закрыть"></button>
         <div class="popup-zoomm" name="popup-zoomm">
