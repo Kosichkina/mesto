@@ -1,5 +1,5 @@
-import { Card } from './Card.js'
-
+import { Card } from "./Card.js";
+//import { FormValidator } from "./FormValidator.js";
 
 // ОПРЕДЕЛЕНИЕ ПЕРЕМЕННЫХ ДЛЯ ПОПАПОВ (выбор DOM - элементов)
 // открытие попапа профиля
@@ -144,7 +144,7 @@ const popupOpenZoom = popupImageContainer.querySelector('.popup__img-zoom');
 const popupImageCapture = popupImageContainer.querySelector('.popup__capture-zoom');
 
 // закончились переменные с большой картинкой
-
+/*
 const createCard = (card) => {
 const сardNew = сardTemplate.cloneNode(true);
 const сardTitle = сardNew.querySelector('.places__capture');
@@ -163,15 +163,18 @@ cardImage.src = card.link;
   return сardNew;
 
 };
-
+*/
+/*
 const handleDeleteButtonClick = (e) => {
   e.target.closest('.places__item').remove()
 } 
+*/
 /*стрелочная функция по мотивам вебинара Максима Чечелева */
-
+/*
 const handleLikeButtonClick = function (evt) {
   evt.target.classList.toggle('places__like_active')
 }; 
+*/
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
 const handlepopupOpenBigImageClick = (e) => {
@@ -185,16 +188,22 @@ const handlepopupOpenBigImageClick = (e) => {
 */
 };
 
-
 popupCloseZoom.addEventListener('click', function () {
   closePopup(popupZoom);
 });
 
+createCard(data) = (card) => {
+  const сardNew = card.generateCard();
+  return сardNew
+}
 
-const renderCard = (card) => {
-  cardsContainer.prepend(createCard(card));
+const renderCard = (card, cardTemplate) => {
+  cardsContainer.prepend(createCard(сardNew));
 };
 
-initialCards.forEach((card) => {
-  renderCard(card);
+initialCards.forEach((card, cardTemplate) => {
+  renderCard(сardNew);
 });
+
+
+
