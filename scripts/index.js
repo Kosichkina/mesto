@@ -1,3 +1,6 @@
+import { Card } from './Card.js'
+
+
 // ОПРЕДЕЛЕНИЕ ПЕРЕМЕННЫХ ДЛЯ ПОПАПОВ (выбор DOM - элементов)
 // открытие попапа профиля
 
@@ -27,7 +30,6 @@ const popupFormAdd = popupNewPlaceElement.querySelector('.popup__form-new-place'
 /*
 const openPopup = function (popup) { 
     popup.classList.add('popup_active');
-
     в данном случае функция закрытия попапа принимает в качестве параметра элемент попапа.
      Вот мы его в начале находим, а затем передаём в функцию closePopup
 }
@@ -144,15 +146,15 @@ const popupImageCapture = popupImageContainer.querySelector('.popup__capture-zoo
 // закончились переменные с большой картинкой
 
 const createCard = (card) => {
-  const сardNew = сardTemplate.cloneNode(true);
-  const сardTitle = сardNew.querySelector('.places__capture');
-  const cardImage = сardNew.querySelector('.places__img');
-  const cardDeleteButton = сardNew.querySelector('.places__delete-button');
-  const cardLikeButton = сardNew.querySelector('.places__like');
+const сardNew = сardTemplate.cloneNode(true);
+const сardTitle = сardNew.querySelector('.places__capture');
+const cardImage = сardNew.querySelector('.places__img');
+const cardDeleteButton = сardNew.querySelector('.places__delete-button');
+const cardLikeButton = сardNew.querySelector('.places__like');
 
-  сardTitle.textContent = card.name;
-  cardImage.src = card.link;
-  cardImage.alt = card.name;
+сardTitle.textContent = card.name;
+cardImage.src = card.link;
+ cardImage.alt = card.name;
 
   cardDeleteButton.addEventListener('click', handleDeleteButtonClick);
   cardLikeButton.addEventListener('click', handleLikeButtonClick);
@@ -161,14 +163,15 @@ const createCard = (card) => {
   return сardNew;
 
 };
+
 const handleDeleteButtonClick = (e) => {
   e.target.closest('.places__item').remove()
-}
+} 
 /*стрелочная функция по мотивам вебинара Максима Чечелева */
 
 const handleLikeButtonClick = function (evt) {
   evt.target.classList.toggle('places__like_active')
-};
+}; 
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
 const handlepopupOpenBigImageClick = (e) => {
@@ -195,4 +198,3 @@ const renderCard = (card) => {
 initialCards.forEach((card) => {
   renderCard(card);
 });
-
