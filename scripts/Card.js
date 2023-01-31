@@ -1,10 +1,10 @@
 export class Card {
   //принимает в конструктор данные карточки и селектор её template-элемента;
-constructor (data, cardTemplate) {
+constructor (data, cardTemplate, handlepopupOpenBigImageClick) {
 this._name = data.name;
 this._link = data.link;
 this._templateSelector = cardTemplate;
-
+this._handlepopupOpenBigImageClick = handlepopupOpenBigImageClick;
 }
 _getTemplate() {
 const сardNew = document.querySelector(this._templateSelector).content.querySelector('.places__item').cloneNode(true);
@@ -25,11 +25,15 @@ createCard() {
     return this._card;
 
 }
-
-
+/*
 _handleDeleteButtonClick = (e) => {
     e.target.closest('.places__item').remove()
   }
+  */
+  _handleDeleteButtonClick = (event) => {
+    this._newCard.remove();             //event.target.closest('.card').remove();
+    this._newCard = null;
+};
   _handleLikeButtonClick = function (evt) {
     evt.target.classList.toggle('places__like_active');
 }

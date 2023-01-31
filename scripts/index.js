@@ -170,11 +170,11 @@ const handleDeleteButtonClick = (e) => {
 } 
 */
 /*стрелочная функция по мотивам вебинара Максима Чечелева */
-/*
+
 const handleLikeButtonClick = function (evt) {
   evt.target.classList.toggle('places__like_active')
 }; 
-*/
+
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
 const handlepopupOpenBigImageClick = (e) => {
@@ -197,8 +197,8 @@ const createCard = (data, templateSelector) =>
   return card.createCard() 
 }
 
-const renderCard = (card, templateSelector) => 
-{cardsContainer.prepand(createCard(card, templateSelector))
+const renderCard = (card, templateSelector,) => 
+{cardsContainer.prepend(createCard(card, templateSelector))
 }
 
 initialCards.forEach(card => { renderCard(card, templateSelector) })
