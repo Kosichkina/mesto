@@ -164,11 +164,10 @@ cardImage.src = card.link;
 
 };
 */
-/*
+
 const handleDeleteButtonClick = (e) => {
   e.target.closest('.places__item').remove()
 } 
-*/
 /*стрелочная функция по мотивам вебинара Максима Чечелева */
 
 const handleLikeButtonClick = function (evt) {
@@ -193,9 +192,10 @@ popupCloseZoom.addEventListener('click', function () {
 });
 const templateSelector = '#places-template'  
 const createCard = (data, templateSelector) => 
-{ const card = new Card(data, templateSelector) 
+{ const card = new Card(data, templateSelector, handlepopupOpenBigImageClick) 
   return card.createCard() 
 }
+
 
 const renderCard = (card, templateSelector,) => 
 {cardsContainer.prepend(createCard(card, templateSelector))
