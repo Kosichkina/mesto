@@ -8,8 +8,9 @@ this._templateSelector = cardTemplate;
 }
 _getTemplate() {
 const сardNew = document.querySelector(this._templateSelector).content.querySelector('.places__item').cloneNode(true);
-    return сardNew;
+    return сardNew; //cardElement
 }
+
 createCard() {
     
     this._card = this._getTemplate();

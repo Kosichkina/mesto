@@ -191,19 +191,14 @@ const handlepopupOpenBigImageClick = (e) => {
 popupCloseZoom.addEventListener('click', function () {
   closePopup(popupZoom);
 });
-
-createCard(data) = (card) => {
-  const сardNew = card.generateCard();
-  return сardNew
+const templateSelector = '#places-template'  
+const createCard = (data, templateSelector) => 
+{ const card = new Card(data, templateSelector) 
+  return card.createCard() 
 }
 
-const renderCard = (card, cardTemplate) => {
-  cardsContainer.prepend(createCard(сardNew));
-};
+const renderCard = (card, templateSelector) => 
+{cardsContainer.prepand(createCard(card, templateSelector))
+}
 
-initialCards.forEach((card, cardTemplate) => {
-  renderCard(сardNew);
-});
-
-
-
+initialCards.forEach(card => { renderCard(card, templateSelector) })
