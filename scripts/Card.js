@@ -25,14 +25,9 @@ createCard() {
     return this._card;
 
 }
-/*
-_handleDeleteButtonClick = (e) => {
-    e.target.closest('.places__item').remove()
-  }
-  */
-  _handleDeleteButtonClick = (event) => {
-    this._newCard.remove();             //event.target.closest('.card').remove();
-    this._newCard = null;
+_handleDeleteButtonClick = (event) => {
+    this._card.remove();             
+    this._card = null;
 };
   _handleLikeButtonClick = function (evt) {
     evt.target.classList.toggle('places__like_active');
@@ -41,16 +36,12 @@ _setEventListeners() {
     this._cardImage.addEventListener('click', () => {
         this._handlepopupOpenBigImageClick(this._link, this._name)
     });
-
+    
     this._cardDeleteButton.addEventListener('click', () => {
         this._handleDeleteButtonClick()
     });
-
-    this._cardLikeButton.addEventListener('click', () => {
-        this._handleLikeButtonClick ()
-    });
+    this._cardLikeButton.addEventListener('click', this._handleLikeButtonClick);
 }
-
 
 }
 // this._cardsContainer = document.querySelector('.places');

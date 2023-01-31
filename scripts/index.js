@@ -163,17 +163,18 @@ cardImage.src = card.link;
   return сardNew;
 
 };
-*/
+
 
 const handleDeleteButtonClick = (e) => {
   e.target.closest('.places__item').remove()
 } 
+*/
 /*стрелочная функция по мотивам вебинара Максима Чечелева */
-
+/*
 const handleLikeButtonClick = function (evt) {
   evt.target.classList.toggle('places__like_active')
 }; 
-
+*/
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
 const handlepopupOpenBigImageClick = (e) => {
