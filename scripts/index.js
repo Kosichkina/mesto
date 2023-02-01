@@ -116,7 +116,7 @@ const handleSubmitAddCard = (event) => {
   renderCard({
     name: popupInputNewPlace.value,
     link: popupInputLinkPlace.value,
-  });
+  }, templateSelector);
   closePopup(popupNewPlaceElement);
 };
 
@@ -177,7 +177,7 @@ const handleLikeButtonClick = function (evt) {
 */
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
-const handlepopupOpenBigImageClick = (name, link) => {
+const handlepopupOpenBigImageClick = (name, link, templateSelector) => {
   openPopup(popupZoom);
   popupOpenZoom.src = link;
   popupOpenZoom.alt = name;

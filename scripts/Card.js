@@ -35,7 +35,7 @@ _handleDeleteButtonClick = (event) => {
 _setEventListeners() {
     this._cardImage.addEventListener('click', () => 
     {
-        this._handlepopupOpenBigImageClick(this._link, this._name)
+        this._handlepopupOpenBigImageClick(this._name, this._link)
     });
     
     
