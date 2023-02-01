@@ -177,16 +177,16 @@ const handleLikeButtonClick = function (evt) {
 */
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
-const handlepopupOpenBigImageClick = (e) => {
+const handlepopupOpenBigImageClick = (name, link) => {
   openPopup(popupZoom);
-
-  popupOpenZoom.src = e.target.src;
-  popupOpenZoom.alt = e.target.alt;
-  popupImageCapture.textContent = e.target.alt;
+  popupOpenZoom.src = link;
+  popupOpenZoom.alt = name;
+  popupImageCapture.textContent = name;
   /*
   popupImageCapture.textContent = e.target.closest('.places__item').querySelector('.places__capture').textContent;
 */
 };
+ 
 
 popupCloseZoom.addEventListener('click', function () {
   closePopup(popupZoom);

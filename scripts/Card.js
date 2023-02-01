@@ -8,7 +8,7 @@ this._handlepopupOpenBigImageClick = handlepopupOpenBigImageClick;
 }
 _getTemplate() {
 const сardNew = document.querySelector(this._templateSelector).content.querySelector('.places__item').cloneNode(true);
-    return сardNew; //cardElement
+    return сardNew; 
 }
 
 createCard() {
@@ -33,17 +33,19 @@ _handleDeleteButtonClick = (event) => {
     evt.target.classList.toggle('places__like_active');
 }
 _setEventListeners() {
-    this._cardImage.addEventListener('click', () => {
+    this._cardImage.addEventListener('click', () => 
+    {
         this._handlepopupOpenBigImageClick(this._link, this._name)
     });
+    
     
     this._cardDeleteButton.addEventListener('click', () => {
         this._handleDeleteButtonClick()
     });
     this._cardLikeButton.addEventListener('click', this._handleLikeButtonClick);
-}
+
 
 }
 // this._cardsContainer = document.querySelector('.places');
 //нужно создать экземпляр класса Card и у него вызывать метод createCard const card = new Card(data, templateSelector) wrap.prepend(card.createCard())
-
+}
