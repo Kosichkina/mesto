@@ -1,5 +1,5 @@
 import { Card } from "./Card.js";
-//import { FormValidator } from "./FormValidator.js";
+import { FormValidator } from "./FormValidator.js";
 
 // ОПРЕДЕЛЕНИЕ ПЕРЕМЕННЫХ ДЛЯ ПОПАПОВ (выбор DOM - элементов)
 // открытие попапа профиля
@@ -177,7 +177,7 @@ const handleLikeButtonClick = function (evt) {
 */
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
-const handlepopupOpenBigImageClick = (name, link, templateSelector) => {
+const handlepopupOpenBigImageClick = (name, link) => {
   openPopup(popupZoom);
   popupOpenZoom.src = link;
   popupOpenZoom.alt = name;
@@ -203,3 +203,19 @@ const renderCard = (card, templateSelector,) =>
 }
 
 initialCards.forEach(card => { renderCard(card, templateSelector) })
+
+// Добавление валидации
+
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_invalid',
+  errorClass: 'popup__input-error_visible', //нет класса в htm, есть в css
+};
+
+const addCardFormValidator = new FormValidator(validationConfig, popupForm)
+const editProfileFormValidator = new FormValidator(validationConfig, popupformEditProfile)
+
+addCardFormValidator.enableValidation()
+editProfileFormValidator.enableValidation()
