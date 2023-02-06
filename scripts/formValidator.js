@@ -59,17 +59,17 @@ _showInputError(input) {
   }
   
   _setEventListeners() {
-    this._inputs.forEach((input) => {
+    this._inputList.forEach((input) => {
       input.addEventListener('input', () => {
-        this._isValid(input);
-        this._toggleButtonState(this._button, this._inputs);
+        this._checkInputValidity(input);
+        this._toggleButtonState(this._buttonElement, this._inputList);
       });
     });
 
     this._form.addEventListener('reset', () => {
       setTimeout(() => {
-        this._isValid(this._form);
-        this._toggleButtonState(this._button, this._inputs);
+        this._checkInputValidity(this._form);
+        this._toggleButtonState(this._buttonElement, this._inputList);
     }, 0)
     });
 
@@ -77,10 +77,7 @@ _showInputError(input) {
   };
 
   enableValidation() {
-    _handleSubmit = (event) => {
-      event.preventDefault();
-    this._setEventListeners();
-
-}
+  this._form.addEventListener('submit', (ev) => { ev.preventDefault()})
+  this._setEventListeners();
 }
 }

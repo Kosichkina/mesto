@@ -214,7 +214,7 @@ const validationConfig = {
   errorClass: 'popup__input-error_visible', //нет класса в htm, есть в css
 };
 
-const addCardFormValidator = new FormValidator(validationConfig, popupForm)
+const addCardFormValidator = new FormValidator(validationConfig, popupFormAdd)
 const editProfileFormValidator = new FormValidator(validationConfig, popupformEditProfile)
 
 addCardFormValidator.enableValidation()
