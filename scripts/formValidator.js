@@ -68,12 +68,10 @@ _showInputError(input) {
 
     this._form.addEventListener('reset', () => {
       setTimeout(() => {
-        this._checkInputValidity(this._form);
-        this._toggleButtonState(this._buttonElement, this._inputList);
     }, 0)
     });
 
-    this._toggleButtonState(this._button, this._inputs);
+   
   };
 
   enableValidation() {
