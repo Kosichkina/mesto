@@ -105,6 +105,7 @@ buttonOpenPopupAdd.addEventListener('click', function () {
    
   openPopup(popupNewPlaceElement);
   popupFormAdd.reset();
+  addCardFormValidator._disableButton();
 });
 
 buttonClosePopupAdd.addEventListener('click', function () {
@@ -114,8 +115,8 @@ buttonClosePopupAdd.addEventListener('click', function () {
 
 const handleSubmitAddCard = (event) => {
   event.preventDefault();
-  event.submitter.disabled = true; 
-  event.submitter.classList.add('popup__button_invalid'); 
+  //event.submitter.disabled = true; 
+  //event.submitter.classList.add('popup__button_invalid'); 
 
   renderCard({
     name: popupInputNewPlace.value,

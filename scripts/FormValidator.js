@@ -45,17 +45,25 @@ _showInputError(input) {
   
   }
 
+  _enableButton() {
+    this._buttonElement.classList.remove(this._config.inactiveButtonClass);
+    this._buttonElement.disabled = false;
+  }
+  _disableButton() {
+    this._buttonElement.classList.add(this._config.inactiveButtonClass);
+    this._buttonElement.disabled = true;
+    
+  }
   _toggleButtonState(inputList) {
     if (this._hasInvalidInput(inputList)) {
-        this._buttonElement.classList.add(this._config.inactiveButtonClass);
-        this._buttonElement.disabled = true;
-        
-        
-  
-    } else {
+      this._disableButton()
+
+    } 
+    else {
+      this._enableButton()
       
-        this._buttonElement.classList.remove(this._config.inactiveButtonClass);
-        this._buttonElement.disabled = false;
+        
+       
   
     }
   }
@@ -82,9 +90,7 @@ _showInputError(input) {
   
   this._setEventListeners();
 }
-disableSubmitButton() {
-  this._toggleButtonState();
-};
+
 }
 /* e.submitter.disabled = true; 
   e.submitter.classList.add(this._config.inactiveButtonClass);
