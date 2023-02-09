@@ -77,12 +77,14 @@ const closePopup = function (popup) {
 //Открытие и закрытие редактирования профиля
 //программирование кнопки
 popupOpenButtonProfileElement.addEventListener('click', function () {
+
   openPopup(popupEditProfile);
   popupInputName.value = profileTitleElement.textContent;
   popupInputDescription.value = profileSubtitleElement.textContent;
 });
 
 popupCloseButtonProfileElement.addEventListener('click', function () {
+
   closePopup(popupEditProfile);
 
 
@@ -100,6 +102,7 @@ popupformEditProfile.addEventListener('submit', handleSubmitProfile);
 
 //Открытие и закрытие добавления карточки
 buttonOpenPopupAdd.addEventListener('click', function () {
+   
   openPopup(popupNewPlaceElement);
   popupFormAdd.reset();
 });
@@ -111,8 +114,9 @@ buttonClosePopupAdd.addEventListener('click', function () {
 
 const handleSubmitAddCard = (event) => {
   event.preventDefault();
-  event.submitter.disabled = true;
-  event.submitter.classList.add('popup__button_invalid');
+  event.submitter.disabled = true; 
+  event.submitter.classList.add('popup__button_invalid'); 
+
   renderCard({
     name: popupInputNewPlace.value,
     link: popupInputLinkPlace.value,
@@ -178,10 +182,11 @@ const handleLikeButtonClick = function (evt) {
 /*в toggle (переключатель) перередается только селектор, не класс, поэтому пишется без точки*/
 
 const handlepopupOpenBigImageClick = (name, link) => {
-  openPopup(popupZoom);
+  
   popupOpenZoom.src = link;
   popupOpenZoom.alt = name;
   popupImageCapture.textContent = name;
+  openPopup(popupZoom);
   /*
   popupImageCapture.textContent = e.target.closest('.places__item').querySelector('.places__capture').textContent;
 */

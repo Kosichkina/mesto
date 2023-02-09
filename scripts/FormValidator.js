@@ -44,14 +44,16 @@ _showInputError(input) {
     return this._inputList.some((input) => !input.validity.valid);
   
   }
-  
+
   _toggleButtonState(inputList) {
     if (this._hasInvalidInput(inputList)) {
         this._buttonElement.classList.add(this._config.inactiveButtonClass);
         this._buttonElement.disabled = true;
-  
+        
+        
   
     } else {
+      
         this._buttonElement.classList.remove(this._config.inactiveButtonClass);
         this._buttonElement.disabled = false;
   
@@ -69,6 +71,7 @@ _showInputError(input) {
     this._form.addEventListener('reset', () => {
       setTimeout(() => {
     }, 0)
+    
     });
 
    
@@ -76,6 +79,13 @@ _showInputError(input) {
 
   enableValidation() {
   this._form.addEventListener('submit', (ev) => { ev.preventDefault()})
+  
   this._setEventListeners();
 }
+disableSubmitButton() {
+  this._toggleButtonState();
+};
 }
+/* e.submitter.disabled = true; 
+  e.submitter.classList.add(this._config.inactiveButtonClass);
+  */
